@@ -1,27 +1,52 @@
+<!--
+unity webgl responsive
+
+template by dom
+dom@crowscrowscrows.com
+https://twitter.com/zerstoerer
+
+source code on github
+https://github.com/sno/unity-webgl-responsive
+-->
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Basketball game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>GOALGIRL</title>
   </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" width=1920 height=1080 style="width: 90%; height: 90%; background: #231F20"></canvas>
-    <script src="Build/Build_opengl4.loader.js"></script>
-	<center>
+  <body>
+    <div class="webgl-wrapper">
+      <div class="aspect"></div>
+      <div class="webgl-content">
+        <div id="unityContainer">
+          <canvas id="unity-canvas" style="background: #231F20"></canvas>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <script src="MyLoader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Build_opengl4.data",
-        frameworkUrl: "Build/Build_opengl4.framework.js",
-        codeUrl: "Build/Build_opengl4.wasm",
+        dataUrl: "Build/Build_opengl16.data",
+        frameworkUrl: "Build/Build_opengl16.framework.js",
+        codeUrl: "Build/Build_opengl16.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Basketball game",
-        productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        companyName: "SONGPROST",
+        productName: "GOALGIRL",
+        productVersion: "0.3",
+      }).then((unityInstance) => {
+        myGameInstance = unityInstance;
       });
     </script>
-	</center>
+
   </body>
 </html>
