@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Basketball game</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1920 height=1080 style="width: 90%; height: 90%; background: #231F20"></canvas>
+    <script src="Build/Build_opengl4.loader.js"></script>
+	<center>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Build_opengl4.data",
+        frameworkUrl: "Build/Build_opengl4.framework.js",
+        codeUrl: "Build/Build_opengl4.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Basketball game",
+        productVersion: "0.1",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+	</center>
+  </body>
+</html>
